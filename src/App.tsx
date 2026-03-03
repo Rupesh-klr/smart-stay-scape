@@ -15,6 +15,7 @@ import Amenities from "./pages/Amenities";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
+const basename = window.location.hostname.includes("github.io") ? "/smart-stay-scape" : "/";
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
@@ -22,7 +23,7 @@ const App = () => (
       <AuthProvider>
         <Toaster />
         <Sonner />
-        <BrowserRouter>
+        <BrowserRouter basename={basename}>
           <div className="flex min-h-screen flex-col">
             <Navbar />
             <main className="flex-1">
